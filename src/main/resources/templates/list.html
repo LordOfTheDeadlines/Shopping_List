@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TODO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="/main.js"></script>
+    <script src="/buyStatus.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1 th:text="${appName}" style="color: green">Default app name</h1>
+    <hr/>
+    <div class="content">
+        <div class="row article" th:each="product : ${products}">
+            <div class="col-md-10 col-md-offset-1">
+                <h3 th:text="${product.name}">Продукт</h3>
+            </div>
+            <div class="col-md-1">
+                <div class="col-md-1">
+                <button class="btn btn-sm btn-secondary like" th:text="${product.name}"
+                        th:attr="data-post-id=${product.id}">
+                </button>
+                <button class="btn btn-sm btn-secondary delete_button" th:text="Удалить"
+                        th:attr="data-post-id=${product.id}">
+                </button>
+            </div>
+            <div class="col-md-12">
+                <hr/>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
