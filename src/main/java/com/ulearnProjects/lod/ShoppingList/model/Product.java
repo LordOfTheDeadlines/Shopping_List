@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 public class Product implements Serializable {
@@ -12,7 +11,7 @@ public class Product implements Serializable {
     @GeneratedValue
     private Long id;
     private String name;
-    private Boolean isBought;
+    private Boolean status;
 
     public Product(){
 
@@ -38,16 +37,16 @@ public class Product implements Serializable {
         return id;
     }
 
-    public Boolean isBought() {
-        return isBought;
+    public Boolean getStatus() {
+        return status;
     }
 
     public void setBought() {
-        isBought = true;
+        status = true;
     }
 
     public void setNotBought(){
-        isBought = false;
+        status = false;
     }
 }
 

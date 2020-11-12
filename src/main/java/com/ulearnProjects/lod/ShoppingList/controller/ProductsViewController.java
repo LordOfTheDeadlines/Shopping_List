@@ -15,7 +15,7 @@ public class ProductsViewController {
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String list(Model model) {
-        model.addAttribute("appName", "Моё супер приложение");
+        model.addAttribute("appName", "Список покупок");
         model.addAttribute("products", productService.listAllProducts());
         return "list";
     }

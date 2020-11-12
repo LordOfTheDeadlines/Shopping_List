@@ -14,7 +14,7 @@ public class BuyingController {
     BuyingService buyingService;
 
     @ResponseBody
-    @RequestMapping(path = "/item/{id}/status", method = RequestMethod.POST)
+    @RequestMapping(path = "/product/{id}/status", method = RequestMethod.POST)
     public boolean check(@PathVariable("id") Long id){
         return buyingService.check(id);
     }

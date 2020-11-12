@@ -4,27 +4,26 @@
     <title>TODO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="/main.js"></script>
-    <script src="/buyStatus.js"></script>
+    <script src="/buttonsScript.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <div class="container">
     <h1 th:text="${appName}" style="color: green">Default app name</h1>
+    <a href="/product/new">Добавить продукт</a>
     <hr/>
     <div class="content">
-        <div class="row article" th:each="product : ${products}">
-            <div class="col-md-10 col-md-offset-1">
+        <div class="row article" th:each="product : ${products}" >
+            <div class="col-md-10 col-md-offset-1" th:id="${product.id}" style="background-color: white">
                 <h3 th:text="${product.name}">Продукт</h3>
             </div>
             <div class="col-md-1">
                 <div class="col-md-1">
-                <button class="btn btn-sm btn-secondary like" th:text="${product.name}"
-                        th:attr="data-post-id=${product.id}">
-                </button>
-                <button class="btn btn-sm btn-secondary delete_button" th:text="Удалить"
-                        th:attr="data-post-id=${product.id}">
-                </button>
+                    <div class="item__check">
+                        <button class="item__check-btn" th:attr="data-post-id=${product.id}">Куплено</button>
+                    <button class="item__delete-btn" th:id="${product.id} + -delete-button" th:attr="data-post-id=${product.id}">
+                    </button>
+                </div>
             </div>
             <div class="col-md-12">
                 <hr/>

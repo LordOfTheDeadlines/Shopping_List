@@ -14,7 +14,7 @@ public class DeleteController {
     ProductService productService;
 
     @ResponseBody
-    @RequestMapping(path = "/item/{id}/delete", method = RequestMethod.POST)
+    @RequestMapping(path = "/product/{id}/delete", method = RequestMethod.POST)
     public void delete(@PathVariable("id") Long id){
         productService.remove(id);
     }

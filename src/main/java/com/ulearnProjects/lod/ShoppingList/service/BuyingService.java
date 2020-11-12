@@ -2,7 +2,9 @@ package com.ulearnProjects.lod.ShoppingList.service;
 
 import com.ulearnProjects.lod.ShoppingList.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BuyingService {
 
     @Autowired
@@ -10,9 +12,9 @@ public class BuyingService {
 
     public boolean  check(Long itemId){
         Product product = productService.find(itemId);
-        if(product.isBought())
+        if(product.getStatus())
             product.setNotBought();
         else product.setBought();
-        return product.isBought();
+        return product.getStatus();
     }
 }

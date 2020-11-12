@@ -11,13 +11,13 @@ public class CreateController {
     @Autowired
     ProductService productService;
 
-    @RequestMapping(path = "/new", method = RequestMethod.GET)
+    @RequestMapping(path = "/product/new", method = RequestMethod.GET)
     public String create(Model model) {
         model.addAttribute("appName", "Список покупок");
         return "create";
     }
 
-    @RequestMapping(path = "/new", method = RequestMethod.POST)
+    @RequestMapping(path = "/product/new", method = RequestMethod.POST)
     public String doCreate(@ModelAttribute("text") String text) {
         productService.create(text);
         return "redirect:/";
